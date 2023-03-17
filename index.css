@@ -55,3 +55,68 @@ img {
 .e {
     grid-area: e;
 }
+
+.nav-container {
+    background-color: black;
+    opacity: .7;
+    height: 140px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 64px;
+    margin: 24px 24px 24px 24px;
+    display: grid;
+    align-content: start;
+}
+
+.nav-container a {
+    color: #f9f9f9;
+    font-family: var(--worksans-font);
+    position: absolute;
+    top: 20%;
+    padding: 8px 8px;
+}
+
+a:hover {
+    background-color: #d3d3d3;
+    border-radius: 64px;
+    color: black;
+}
+
+.logo-link {
+    font-size: 48px;
+    font-weight: 500;
+    padding-left: 64px;
+}
+
+.nav-links {
+    font-size: 18px !important;
+    float: none;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    font-weight: 400;
+}
+
+.contact-link {
+    padding-left: 13em;
+} 
+
+@media (max-width: 450px){
+    .nav-container {
+        margin: 16px 16px;
+        height: 120px;
+    }
+
+    .nav-links {
+        left: 35%;
+    }
+
+    .logo-link {
+        padding-left: 24px;
+    }
+
+    .contact-link {
+        padding-left: 6em;
+    }   
+}

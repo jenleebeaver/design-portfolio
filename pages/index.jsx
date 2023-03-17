@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './components/nav.jsx';
 
 function ImageList(){
   let slideshow = React.useRef(null);
@@ -95,60 +96,57 @@ function ImageList(){
 
 export default function ImageContainer({}) {
 
-  React.useEffect(() => {
-
-  })
-
   // FETCHING DATA FROM MET API 
   // const [images, setImages] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  // const [isLoading, setIsLoading] = React.useState(false);
 
-  React.useEffect(() => {
-    async function getImages() {
-      setIsLoading(true);
+  // React.useEffect(() => {
+  //   async function getImages() {
+  //     setIsLoading(true);
 
-      // // FETCHING DATA FROM MET API 
-      // // returning an array of object ID's with French Art between 1890-1900 - Belle Epoque (era of progress and prosperity)/ Impressionists 
-      // const idResponse = await fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=1890&dateEnd=1900&q=French");
-      // const idJSON = await idResponse.json();
-      // const parsedIds = idJSON.objectIDs.slice(0,1000);
-      // console.log(parsedIds);
+  //     // // FETCHING DATA FROM MET API 
+  //     // // returning an array of object ID's with French Art between 1890-1900 - Belle Epoque (era of progress and prosperity)/ Impressionists 
+  //     // const idResponse = await fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=1890&dateEnd=1900&q=French");
+  //     // const idJSON = await idResponse.json();
+  //     // const parsedIds = idJSON.objectIDs.slice(0,1000);
+  //     // console.log(parsedIds);
 
-      // //returning an array of object URL's associated to the object ID's. Includes three filters: 1) 404 errors 2) painting classfication 3) empty string
-      // Promise.all(parsedIds.map( async id => await fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + id)))
-      // .then(responses => {
-      //   //filter out responses that return 404 
-      //   const validResponses = responses.filter(response => response.status !== 404);
-      //     return Promise.all(validResponses.map(response => response.json()));
-      // }).then(data => {
-      //   console.log(data);
-      //   const paintings =  data.filter(object => (object.classification.includes("Paintings")));
-      //   console.log(paintings);
-      //   const urls = paintings.map( object => object.primaryImageSmall);
-      //   console.log(urls);
+  //     // //returning an array of object URL's associated to the object ID's. Includes three filters: 1) 404 errors 2) painting classfication 3) empty string
+  //     // Promise.all(parsedIds.map( async id => await fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + id)))
+  //     // .then(responses => {
+  //     //   //filter out responses that return 404 
+  //     //   const validResponses = responses.filter(response => response.status !== 404);
+  //     //     return Promise.all(validResponses.map(response => response.json()));
+  //     // }).then(data => {
+  //     //   console.log(data);
+  //     //   const paintings =  data.filter(object => (object.classification.includes("Paintings")));
+  //     //   console.log(paintings);
+  //     //   const urls = paintings.map( object => object.primaryImageSmall);
+  //     //   console.log(urls);
 
-      //   function filterList(urls){
-      //     return urls.filter(url => {
-      //       if (url === ''){
-      //         return false;
-      //       } 
-      //       return true;
-      //     })
-      //   };
+  //     //   function filterList(urls){
+  //     //     return urls.filter(url => {
+  //     //       if (url === ''){
+  //     //         return false;
+  //     //       } 
+  //     //       return true;
+  //     //     })
+  //     //   };
 
-      //   const filteredList = filterList(urls);
-      //   console.log(filteredList);
-      // });
+  //     //   const filteredList = filterList(urls);
+  //     //   console.log(filteredList);
+  //     // });
      
-      // setImages(imageURLS);
-      // setIsLoading(false);
-    }
-    getImages();
-  }, []);
+  //     // setImages(imageURLS);
+  //     // setIsLoading(false);
+  //   }
+  //   // getImages();
+  // }, []);
 
   return (
     <div>
-      <ImageList isLoading={isLoading} />
+      <ImageList />
+      <Nav />
     </div>
   )
 }
