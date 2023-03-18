@@ -1,11 +1,12 @@
 import React from 'react';
 import Nav from './components/nav.jsx';
+import AudioControl from './components/audioControl.jsx';
 
 function ImageList(){
   let slideshow = React.useRef(null);
 
   React.useEffect(() => {
-    const slideshowElement = slideshow.current.querySelector('.art-slideshow');    
+    const slideshowElement = slideshow.current.querySelector('.art-slideshow');  
     
     const artContainerHeight = slideshowElement.offsetHeight - window.innerHeight;
 
@@ -146,6 +147,7 @@ export default function ImageContainer({}) {
   return (
     <div>
       <ImageList />
+      <AudioControl />
       <Nav />
     </div>
   )
