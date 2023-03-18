@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-// import Image from 'next/image';
-// import playIcon from './noun-play-104830.svg'
+import Tooltip from './toolTip.jsx';
 
-export default function AudioControl(props) {
+export default function AudioControl() {
     let audio = React.useRef(null);
     let playButton = React.useRef(null);
 
@@ -51,12 +50,14 @@ export default function AudioControl(props) {
         <div ref={audio} className="audio-player">
             <audio src="./audio/debussy.mp3"></audio>
             <div ref={playButton} onClick={handlePlay}>
-                <button data-playing="false" role="switch" aria-checked="false">
-                    <span>
-                        Play/Pause
-                    {/* <img src={playIcon} alt="play by Yaroslav Samoylov from <a href='https://thenounproject.com/browse/icons/term/play/' target='_blank' title='play Icons'>Noun Project</a>" /> */}
-                    </span>
-                </button>
+                <Tooltip text="Press play to listen to Prelude to the Afternoon of a Faun by Debussy.">
+                    <button data-playing="false" role="switch" aria-checked="false">
+                        <span>
+                        ⏯
+                        {/* <img src={playIcon} alt="play by Yaroslav Samoylov from <a href='https://thenounproject.com/browse/icons/term/play/' target='_blank' title='play Icons'>Noun Project</a>" /> */}
+                        </span>
+                    </button>
+                </Tooltip>
             </div>
         </div>
     )

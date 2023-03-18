@@ -144,8 +144,15 @@ a:hover {
     opacity: .7;
     color: #f9f9f9;
     border: none;
-    border-radius: 64px;
+    border-radius: 200px;
     padding: 24px 24px;
+    font-size: 32px;
+}
+
+.audio-player button:hover {
+    color: black;
+    background-color: #f9f9f9;
+    cursor: pointer;
 }
 
 .dropdown-menu-container {
@@ -195,6 +202,7 @@ a:hover {
     opacity: .7;
     color: black;
     padding-left: 24px;
+    width: 100%;
 }
 
 .submenu li {
@@ -207,3 +215,30 @@ a:hover {
     opacity: .9;
     color: #f9f9f9;
 }
+
+.tooltip-container {
+     position: absolute;
+    top: 24px;
+    right: 24px;
+    color: white;
+    font-family: var(--worksans-font);
+    width: 200px;
+  }
+  
+ .tooltip-trigger {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltip {
+    position: absolute;
+    right: 120px;
+    /* transform: translateX(-50%); */
+    /* background-color: #000; */
+    color: #fff;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+  } 
