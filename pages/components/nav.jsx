@@ -1,5 +1,15 @@
-// import { Routes } from "@config/routes";
+import Link from 'next/link';
 import React, { useEffect } from 'react';
+
+// TODO(jenn): Make nav dynamic
+// const NAV_ITEM = [
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+//     { navText: 'Stylbee', href: '/', hasSubmenu: false },
+// ]
 
 export default function Nav(){
     const [menuVisible, setMenuVisible] = React.useState(false);
@@ -20,8 +30,16 @@ export default function Nav(){
 
     const subMenuItems = (
         <ul className="submenu">
-            <li>Nipit</li>
-            <li>Clean-a-Can</li>
+            <li>
+                <Link href="/">
+                    Nipit
+                </Link>
+            </li>
+            <li>
+                <Link href="/">
+                    Clean-a-Can
+                </Link>
+            </li>
         </ul>
     );
 
@@ -48,27 +66,51 @@ export default function Nav(){
         <div className="nav-container"> 
             <div className="nav">
                 <div className="logo-link">
-                    <a>JB</a>
+                    <Link href="/">
+                        JB
+                    </Link>
                 </div>
                 <div className="nav-links">
-                    <div className="dropdown-menu-container" ref={menuRef}>
-                        <a onClick={handleMenuClick}>PROJECTS</a>
+                    <div className="dropdown-menu-container">
+                        <div className="inner-link" ref={menuRef}>
+                            <a onClick={handleMenuClick} style={{marginRight: 64}}>
+                                PROJECTS
+                            </a>
+                        </div>
                         {menuVisible && (
                             <ul className={`dropdown-menu ${menuVisible ? 'open' : ''}`}>
-                                <li>Agavos Group</li>
-                                <li>First Republic Bank</li>
+                                 <li>
+                                    <Link href="/case_study">
+                                    Agavos Group
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/">
+                                    First Republic Bank
+                                    </Link>
+                                </li>
                                 <li onMouseEnter={handleMouseEnter} 
                                     onMouseLeave={handleMouseLeave}
                                     style={listItemStyle}>
-                                    ImForza ⬇
-                                    {isSubMenuOpen && subMenuItems}       
+                                    <Link href="/">
+                                        ImForza ⬇     
+                                    </Link>
+                                    {isSubMenuOpen && subMenuItems}  
                                 </li>
-                                <li>Carol Kline</li>
-                                <li>Stylebee</li>
+                                <li>
+                                    <Link href="/">
+                                        Carol Kline
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/">
+                                    Stylebee
+                                    </Link>
+                                </li>
                             </ul>
                         )}
                     </div>
-                    <div className="contact-link">
+                    <div className="inner-link">
                         <a>CONTACT</a>
                     </div>
                 </div>

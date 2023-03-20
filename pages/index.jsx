@@ -1,4 +1,5 @@
 import React from 'react';
+import CaseStudy from './case_study.jsx';
 import Nav from './components/nav.jsx';
 import AudioControl from './components/audioControl.jsx';
 
@@ -147,6 +148,7 @@ export default function ImageContainer({}) {
   return (
     <div>
       <ImageList />
+      <CaseStudy />
       <AudioControl />
       <Nav />
     </div>
