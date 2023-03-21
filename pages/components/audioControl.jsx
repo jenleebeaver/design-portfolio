@@ -33,7 +33,7 @@ export default function AudioControl() {
 
         //get audio element
         const audioElement = audio.current.querySelector("audio"); 
-        console.log(audioElement);
+        // console.log(audioElement);
 
         // //passing element into audio context to create input node - unneccesary code 
         // const track = audioContext.createMediaElementSource(audioElement);
@@ -42,7 +42,7 @@ export default function AudioControl() {
 
         //selecting our play button
         const playElement = playButton.current.querySelector("button");
-        console.log(playElement);
+        // console.log(playElement);
     }, []);
 
 
