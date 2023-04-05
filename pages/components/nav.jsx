@@ -79,30 +79,31 @@ export default function Nav(){
                         </div>
                         {menuVisible && (
                             <ul className={`dropdown-menu ${menuVisible ? 'open' : ''}`}>
-                                 <li>
+                                 <li className="menu-link">
                                     <Link href="/case_study">
                                     Agavos Group
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="menu-link">
                                     <Link href="/">
                                     First Republic Bank
                                     </Link>
                                 </li>
                                 <li onMouseEnter={handleMouseEnter} 
                                     onMouseLeave={handleMouseLeave}
-                                    style={listItemStyle}>
+                                    style={listItemStyle}
+                                    className="menu-link">
                                     <Link href="/">
                                         ImForza ⬇     
                                     </Link>
                                     {isSubMenuOpen && subMenuItems}  
                                 </li>
-                                <li>
+                                <li className="menu-link">
                                     <Link href="/">
                                         Carol Kline
                                     </Link>
                                 </li>
-                                <li>
+                                <li className="menu-link">
                                     <Link href="/">
                                     Stylebee
                                     </Link>

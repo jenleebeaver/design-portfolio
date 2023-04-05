@@ -33,16 +33,9 @@ export default function AudioControl() {
 
         //get audio element
         const audioElement = audio.current.querySelector("audio"); 
-        // console.log(audioElement);
-
-        // //passing element into audio context to create input node - unneccesary code 
-        // const track = audioContext.createMediaElementSource(audioElement);
-        // console.log(track);
-        // track.connect(audioContext.destination);
 
         //selecting our play button
         const playElement = playButton.current.querySelector("button");
-        // console.log(playElement);
     }, []);
 
 
@@ -54,7 +47,6 @@ export default function AudioControl() {
                     <button data-playing="false" role="switch" aria-checked="false">
                         <span>
                         ⏯
-                        {/* <img src={playIcon} alt="play by Yaroslav Samoylov from <a href='https://thenounproject.com/browse/icons/term/play/' target='_blank' title='play Icons'>Noun Project</a>" /> */}
                         </span>
                     </button>
                 </Tooltip>

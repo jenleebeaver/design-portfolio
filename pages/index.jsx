@@ -7,22 +7,29 @@ function ImageList(){
 
   React.useEffect(() => {
     const slideshowElement = slideshow.current.querySelector('.art-slideshow');  
-    
     const artContainerHeight = slideshowElement.offsetHeight - window.innerHeight;
 
-      document.getAnimations().forEach((anim) => {
-      anim.cancel();
-      anim.play();
-      });
+    document.getAnimations().forEach((anim) => {
+    anim.cancel();
+    anim.play();
+    });
 
-      const animation = slideshowElement.animate([
-        { transform: `translateY(-${artContainerHeight}px)`}
-      ], {
-        duration: 200000, 
-        iterations: Infinity,
-      });
+    const animation = slideshowElement.animate([
+      { transform: `translateY(-${artContainerHeight}px)`}
+    ], {
+      duration: 500000, 
+      iterations: Infinity,
+    });
 
-      animation.commitStyles();
+    animation.commitStyles();
+
+    //add no scroll on body 
+    document.body.classList.add('no-scroll');
+
+    //remove no scroll from body when component is unmounted
+    return () => {
+      document.body.classList.remove('no-scroll');
+    }
   
   }, []);
 
